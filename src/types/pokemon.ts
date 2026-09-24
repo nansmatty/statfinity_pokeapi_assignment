@@ -60,3 +60,9 @@ export interface PokemonDetail {
 	moves: PokemonMove[];
 	sprites: PokemonSprites;
 }
+
+export interface PokemonCardData {
+	id: number;
+	name: string;
+	image: string;
+}
