@@ -44,7 +44,11 @@ export interface PokemonMove {
 }
 
 export interface PokemonSprites {
-	front_default: string | null;
+	other: {
+		'official-artwork': {
+			front_default: string | null;
+		};
+	};
 }
 
 export interface PokemonDetail {
