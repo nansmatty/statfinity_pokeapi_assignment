@@ -1,7 +1,14 @@
-export default function Home() {
+import PokemonExplorer from '@/components/PokemonExplorer';
+import { getPokemonListHomepage } from '@/lib/pokemon';
+
+// export const dynamic = 'force-static';
+
+export default async function Home() {
+	const pokemonList = await getPokemonListHomepage();
+
 	return (
-		<div className='flex justify-center items-center min-h-screen min-w-screen'>
-			<h1 className='font-semibold tracking-wider text-2xl'>Welcome to Statfinity Assignment</h1>
-		</div>
+		<main>
+			<PokemonExplorer pokemonList={pokemonList} />
+		</main>
 	);
 }
