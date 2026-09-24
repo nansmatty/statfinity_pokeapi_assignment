@@ -1,13 +1,17 @@
 import PokemonExplorer from '@/components/PokemonExplorer';
-import { getPokemonListHomepage } from '@/lib/pokemon';
+import Searchbar from '@/components/Searchbar';
+import { getPokemonList, getPokemonListHomepage } from '@/lib/pokemon';
 
-// export const dynamic = 'force-static';
+export const dynamic = 'force-static';
 
 export default async function Home() {
 	const pokemonList = await getPokemonListHomepage();
 
+	const searchDataPokemonList = await getPokemonList();
+
 	return (
 		<main>
+			<Searchbar searchDataPokemonList={searchDataPokemonList} />
 			<PokemonExplorer pokemonList={pokemonList} />
 		</main>
 	);
