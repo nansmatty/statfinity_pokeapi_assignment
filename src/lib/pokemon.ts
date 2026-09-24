@@ -18,5 +18,21 @@ export const getPokemonByName = async (name: string): Promise<PokemonDetail> => 
 		throw new Error('Failed to fetch Pokemon');
 	}
 
-	return res.json();
+	const data = await res.json();
+
+	return {
+		id: data.id,
+		name: data.name,
+		types: data.types,
+		abilities: data.abilities,
+		stats: data.stats,
+		moves: data.moves,
+		sprites: {
+			other: {
+				'official-artwork': {
+					front_default: data.sprites.other['official-artwork'].front_default,
+				},
+			},
+		},
+	};
 };
