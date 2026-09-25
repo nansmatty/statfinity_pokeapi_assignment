@@ -11,7 +11,7 @@ export default async function Home() {
 	const searchDataPokemonList = await getPokemonList();
 
 	return (
-		<div className='px-48'>
+		<div>
 			<Searchbar searchDataPokemonList={searchDataPokemonList} />
 			<PokemonExplorer pokemonList={pokemonList} />
 		</div>

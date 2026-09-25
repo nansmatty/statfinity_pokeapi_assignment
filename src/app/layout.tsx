@@ -31,7 +31,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
 						</div>
 					</nav>
 				</main>
-				{children}
+				<div className='px-48'>{children}</div>
 			</body>
 		</html>
 	);
