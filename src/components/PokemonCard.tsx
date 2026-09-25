@@ -10,7 +10,7 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
 	return (
 		<div className='rounded-xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-lg transition-shadow duration-300'>
 			<div className='flex justify-center rounded-lg bg-gray-50 p-4'>
-				<img src={pokemon.image} alt={pokemon.name} className='h-32 w-32 object-contain scale-150' />
+				<img src={pokemon.image} alt={pokemon.name} className='h-28 w-28 sm:h-32 sm:w-32 object-contain scale-125 sm:scale-150' />
 			</div>
 			<div className='mt-4'>
 				<p className='text-sm text-gray-500'>#{pokemon.id.toString().padStart(3, '0')}</p>
