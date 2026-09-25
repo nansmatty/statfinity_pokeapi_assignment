@@ -6,7 +6,7 @@ A web app for browsing and exploring Pokémon. Search by name, paginate through 
 
 - Browse all Pokémon on the homepage
 - Search Pokémon by name with debounced input
-- Client-side pagination (18 per page)
+- Client-side pagination (12 per page)
 - Dynamic detail page with artwork, types, abilities, first 10 moves, and base stats with progress bars
 
 ## Tech Stack
@@ -33,7 +33,8 @@ src/
 ├── app/          # Pages and root layout
 ├── components/   # UI components (Searchbar, PokemonCard, PokemonExplorer)
 ├── lib/          # Data-fetching helpers (PokeAPI calls)
-└── types/        # Shared TypeScript types
+├── types/        # Shared TypeScript types
+└── utils/        # Shared utility functions
 ```
 
 ## API
