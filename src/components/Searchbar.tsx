@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 interface SearchbarProps {
 	searchDataPokemonList: string[];
@@ -45,11 +46,11 @@ const Searchbar = ({ searchDataPokemonList }: SearchbarProps) => {
 
 				{/* on search a list will appear here */}
 				{pokeList.length > 0 && (
-					<div className='mt-2 rounded-lg border border-gray-200 bg-white'>
+					<div className='absolute left-0 right-0 top-full z-50 mt-2 max-h-72 overflow-y-auto rounded-lg border flex flex-col border-gray-200 bg-white shadow-lg'>
 						{pokeList.slice(0, 10).map((pokemon) => (
-							<p key={pokemon} className='cursor-pointer px-4 py-2 capitalize hover:bg-gray-100'>
+							<Link href={`/pokemon/${pokemon}`} key={pokemon} className='cursor-pointer px-4 py-2 capitalize hover:bg-gray-100'>
 								{pokemon}
-							</p>
+							</Link>
 						))}
 					</div>
 				)}
