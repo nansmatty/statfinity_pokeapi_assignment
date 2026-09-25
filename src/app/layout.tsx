@@ -24,10 +24,10 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
 			<body className='min-h-full flex flex-col gap-6 md:gap-10'>
 				<main className='w-full'>
 					<nav className='h-16 md:h-24 bg-white px-4 sm:px-8 md:px-24 lg:px-52 flex items-center gap-3'>
-						<Image src='/pokeball.svg' alt='Poké Ball' width={60} height={60} />
+						<Image src='/pokeball.svg' alt='Poké Ball' className='w-12 md:w-16 lg:w-20 h-12 md:h-16 lg:h-20' width={60} height={60} />
 						<div>
-							<h1 className='text-2xl font-bold tracking-wider'>Statfinity</h1>
-							<p className='text-gray-400 font-semibold tracking-wider'>Pokémon Explorer</p>
+							<h1 className='text-lg md:text-2xl font-bold tracking-wider'>Statfinity</h1>
+							<p className='text-sm md:text-base text-gray-400 font-semibold tracking-wider'>Pokémon Explorer</p>
 						</div>
 					</nav>
 				</main>
