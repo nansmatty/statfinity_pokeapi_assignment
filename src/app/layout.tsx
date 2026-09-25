@@ -22,8 +22,8 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
 	return (
 		<html lang='en' className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
 			<body className='min-h-full flex flex-col gap-10'>
-				<main className='w-screen'>
-					<nav className='h-24 bg-white px-52 flex items-center gap-3'>
+				<main className='w-full'>
+					<nav className='h-16 md:h-24 bg-white px-4 sm:px-8 md:px-24 lg:px-52 flex items-center gap-3'>
 						<Image src='/pokeball.svg' alt='Poké Ball' width={60} height={60} />
 						<div>
 							<h1 className='text-2xl font-bold tracking-wider'>Statfinity</h1>
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
 						</div>
 					</nav>
 				</main>
-				<div className='px-48'>{children}</div>
+				<div className='px-4 sm:px-8 md:px-16 lg:px-48'>{children}</div>
 			</body>
 		</html>
 	);
