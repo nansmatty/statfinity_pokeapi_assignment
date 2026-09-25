@@ -3,6 +3,8 @@ import { typeColors, statColors } from '@/utils/constant';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
+const MAX_BASE_STAT = 255;
+
 export default async function PokemonDetails({ params }: { params: Promise<{ name: string }> }) {
 	const { name } = await params;
 
@@ -76,16 +78,17 @@ export default async function PokemonDetails({ params }: { params: Promise<{ nam
 			<div className='bg-white px-4 py-7 rounded-xl capitalize mb-4 mt-10 flex flex-col gap-4'>
 				<p className='font-semibold text-2xl tracking-wider'>Base Stats</p>
 				<div className='flex flex-col gap-2 '>
-					{stats.map((stat, index) => {
-						console.log(stat);
+					{stats.map((stat) => {
+						const percentage = Math.min((stat.value / MAX_BASE_STAT) * 100, 100);
+
 						return (
-							<div key={index} className='flex items-center justify-between'>
-								<p className='w-1/4 font-semibold tracking-wide'>{stat.name} </p>
-								<p className='w-1/4 font-semibold tracking-wide'>{stat.value}</p>
-								<div className='w-3/4 bg-gray-200 rounded-full'>
-									<div
-										className={`text-xs font-medium text-white text-center p-0.5 leading-none rounded-full h-4 flex items-center justify-center ${statColors[stat.name]}`}
-										style={{ width: `${stat.value}%` }}></div>
+							<div key={stat.name} className='grid grid-cols-[160px_60px_1fr] items-center gap-4'>
+								<p className='font-semibold tracking-wide'>{stat.name}</p>
+
+								<p className='font-semibold tracking-wide'>{stat.value}</p>
+
+								<div className='h-4 w-full overflow-hidden rounded-full bg-gray-200'>
+									<div className={`h-full rounded-full ${statColors[stat.name]}`} style={{ width: `${percentage}%` }} />
 								</div>
 							</div>
 						);
