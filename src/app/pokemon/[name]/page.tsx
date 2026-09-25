@@ -24,21 +24,25 @@ export default async function PokemonDetails({ params }: { params: Promise<{ nam
 	}));
 
 	return (
-		<div className='px-4'>
+		<div className='px-4 pt-4 md:pt-0'>
 			<Link href='/' className='text-black font-semibold tracker-wider px-5 py-3 bg-blue-300 rounded-full'>
 				<ArrowLeft className='inline-block mr-2' />
 				Back to Home
 			</Link>
 
-			<div className='bg-white px-4 py-7 rounded-xl capitalize mb-4 mt-10 flex gap-10'>
+			<div className='bg-white px-4 py-7 rounded-xl capitalize mb-4 mt-6 md:mt-10 flex flex-col md:flex-row gap-6 md:gap-10'>
 				<div className='flex rounded-lg p-4'>
-					<img src={image ?? undefined} alt={pokemon.name} className='h-80 w-80 object-contain scale-125' />
+					<img
+						src={image ?? undefined}
+						alt={pokemon.name}
+						className='h-48 w-48 sm:h-64 sm:w-64 md:h-80 md:w-80 object-contain scale-110 md:scale-125'
+					/>
 				</div>
-				<div className='flex flex-col justify-center ml-6'>
-					<h1 className='text-5xl font-bold mb-2'>{pokemon.name}</h1>
+				<div className='flex flex-col justify-center ml-0 md:ml-6'>
+					<h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2'>{pokemon.name}</h1>
 					<div className='my-3'>
 						<p className='font-semibold tracking-wide text-xl mb-2'>Types</p>
-						<div className='flex gap-2'>
+						<div className='flex flex-wrap gap-2'>
 							{types.map((type, index) => (
 								<div key={index} className={`rounded-xl text-center font-semibold tracking-wide text-sm py-2 px-3 ${typeColors[type]}`}>
 									{type}
@@ -48,7 +52,7 @@ export default async function PokemonDetails({ params }: { params: Promise<{ nam
 					</div>
 					<div className='my-3'>
 						<p className='font-semibold tracking-wide text-xl mb-2'>Abilities</p>
-						<div className='flex gap-2'>
+						<div className='flex flex-wrap gap-2'>
 							{abilities.map((ability, index) => (
 								<div key={index} className='rounded-xl bg-gray-300 text-center font-semibold tracking-wide text-sm py-2 px-3'>
 									{ability}
@@ -58,7 +62,7 @@ export default async function PokemonDetails({ params }: { params: Promise<{ nam
 					</div>
 					<div className='my-3'>
 						<p className='font-semibold tracking-wide text-xl mb-2'>Moves {moves.length > 10 ? '(First 10)' : ''} </p>
-						<div className='flex gap-2'>
+						<div className='flex flex-wrap gap-2'>
 							{moves.length > 10
 								? moves.slice(0, 10).map((move, index) => (
 										<div key={index} className='rounded-xl bg-gray-300 text-center font-semibold tracking-wide text-sm py-2 px-3'>
@@ -82,7 +86,9 @@ export default async function PokemonDetails({ params }: { params: Promise<{ nam
 						const percentage = Math.min((stat.value / MAX_BASE_STAT) * 100, 100);
 
 						return (
-							<div key={stat.name} className='grid grid-cols-[160px_60px_1fr] items-center gap-4'>
+							<div
+								key={stat.name}
+								className='grid grid-cols-[100px_44px_1fr] sm:grid-cols-[130px_52px_1fr] md:grid-cols-[160px_60px_1fr] items-center gap-2 sm:gap-3 md:gap-4'>
 								<p className='font-semibold tracking-wide'>{stat.name}</p>
 
 								<p className='font-semibold tracking-wide'>{stat.value}</p>
