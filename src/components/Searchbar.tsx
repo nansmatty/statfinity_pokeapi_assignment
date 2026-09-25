@@ -11,8 +11,6 @@ const Searchbar = ({ searchDataPokemonList }: SearchbarProps) => {
 	const [searchTerm, setSearchTerm] = useState('');
 	const [pokeList, setPokeList] = useState<string[]>([]);
 
-	// Debounce effect for search input and the list willbe used here is getPokemonList
-
 	useEffect(() => {
 		const debounceTimeout = setTimeout(() => {
 			if (searchTerm === '') {
@@ -27,9 +25,9 @@ const Searchbar = ({ searchDataPokemonList }: SearchbarProps) => {
 	}, [searchTerm, searchDataPokemonList]);
 
 	return (
-		<div className='flex flex-col justify-center items-center gap-3 mb-5'>
-			<h1 className='text-5xl font-bold'>Explore Pokémon</h1>
-			<p className='text-xl font-semibold'>Search and discover your favorite Pokémon from the list below.</p>
+		<div className='flex flex-col justify-center items-center gap-3 mb-5 px-4 sm:px-0'>
+			<h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center'>Explore Pokémon</h1>
+			<p className='text-sm sm:text-base md:text-xl font-semibold text-center px-2'>Search and discover your favorite Pokémon from the list below.</p>
 			<div className='relative w-full max-w-2xl mx-auto '>
 				<label htmlFor='pokemon-search' className='sr-only'>
 					Search Pokémon
