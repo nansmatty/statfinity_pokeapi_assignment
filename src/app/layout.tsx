@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<'/'>) {
 	return (
 		<html lang='en' className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-			<body className='min-h-full flex flex-col gap-10'>
+			<body className='min-h-full flex flex-col gap-6 md:gap-10'>
 				<main className='w-full'>
 					<nav className='h-16 md:h-24 bg-white px-4 sm:px-8 md:px-24 lg:px-52 flex items-center gap-3'>
 						<Image src='/pokeball.svg' alt='Poké Ball' width={60} height={60} />
