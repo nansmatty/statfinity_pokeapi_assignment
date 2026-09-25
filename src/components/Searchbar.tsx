@@ -26,7 +26,7 @@ const Searchbar = ({ searchDataPokemonList }: SearchbarProps) => {
 	}, [searchTerm, searchDataPokemonList]);
 
 	return (
-		<div className='flex flex-col justify-center items-center mt-10 gap-3'>
+		<div className='flex flex-col justify-center items-center gap-3 mb-5'>
 			<h1 className='text-5xl font-bold'>Explore Pokémon</h1>
 			<p className='text-xl font-semibold'>Search and discover your favorite Pokémon from the list below.</p>
 			<div className='relative w-full max-w-2xl mx-auto '>

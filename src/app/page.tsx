@@ -1,7 +1,6 @@
 import PokemonExplorer from '@/components/PokemonExplorer';
 import Searchbar from '@/components/Searchbar';
 import { getPokemonList, getPokemonListHomepage } from '@/lib/pokemon';
-import Image from 'next/image';
 
 export const dynamic = 'force-static';
 
